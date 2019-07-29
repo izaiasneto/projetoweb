@@ -8,20 +8,17 @@
 <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
 
 <script>
+	function confirma(pi) {
 
-function confirma(pi){
-		
-		if(window.confirm("Tem certeza que quer excluir?")){
-			location.href="usuario?i=" + pi ;
+		if (window.confirm("Tem certeza que quer excluir?")) {
+			location.href = "usuario?i=" + pi;
 		}
-		
-		
-		
+
 	}
-
-
 </script>
 
 
@@ -75,8 +72,8 @@ function confirma(pi){
 					<div class="row">
 
 						<label for="campo3">Status</label> <br> <input type="radio"
-							name="status" value="ativo"> Ativo <br> <input
-							type="radio" name="status" value="inativo"> Inativo <br>
+							name="status" value="ativo"> Ativo<br> <input
+							type="radio" name="status" value="inativo">Inativo <br>
 
 					</div>
 					<hr />
@@ -99,9 +96,12 @@ function confirma(pi){
 				<div id="top" class="row">
 
 					<h2>Todos usuários</h2>
-
-
-					
+					<div class="form-group input-group">
+						 <span class="input-group-addon"><i
+							class="glyphicon glyphicon-search"></i></span>  <input name="consulta"
+							id="txt_consulta" placeholder="Consultar" type="text"
+							class="form-control"> 
+					</div>
 
 
 				</div>
@@ -111,7 +111,8 @@ function confirma(pi){
 				<div id="list" class="row">
 
 
-					<table class="table table-striped" cellspacing="0" cellpadding="0">
+					<table  class="table table-striped" cellspacing="0" cellpadding="0">
+					
 						<thead>
 							<tr>
 								<th>Status</th>
@@ -129,7 +130,7 @@ function confirma(pi){
 								<%
 									List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
 									int i = 0;
-									
+
 									for (Usuario c : usuarios) {
 								%>
 								<td>
@@ -148,21 +149,20 @@ function confirma(pi){
 									%>
 								</td>
 								<td class="actions">
-								
-								<%
+									<%
 										//out.print(" <a href='usuario?i=" + i +"'> Excluir </a>");
-										out.println("<a class='btn btn-danger' href='javascript:confirma(" + i + ")'> Excluir</a>");
-										
+											out.println("<a class='btn btn-danger' href='javascript:confirma(" + i + ")'> Excluir</a>");
 									%>
-									
+
 								</td>
-								
-							
+
+
 
 							</tr>
 
 							<%
-								i++;}
+								i++;
+								}
 							%>
 
 							</tr>
