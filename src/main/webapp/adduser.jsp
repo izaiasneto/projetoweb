@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 
+<script>
+
+function confirma(pi){
+		
+		if(window.confirm("Tem certeza que quer excluir?")){
+			location.href="usuario?i=" + pi ;
+		}
+		
+		
+		
+	}
+
+
+</script>
 
 
 </head>
@@ -136,8 +150,8 @@
 								<td class="actions">
 								
 								<%
-										out.print(" <a href='usuario?i=" + i +"'> Excluir </a>");
-								
+										//out.print(" <a href='usuario?i=" + i +"'> Excluir </a>");
+										out.println("<a class='btn btn-danger' href='javascript:confirma(" + i + ")'> Excluir</a>");
 										
 									%>
 									
