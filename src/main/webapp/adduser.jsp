@@ -20,7 +20,8 @@
 
 	}
 </script>
-
+<script src="lib/bootstrap/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -96,13 +97,13 @@
 				<div id="top" class="row">
 
 					<h2>Todos usuários</h2>
-					<div class="form-group input-group">
-						 <span class="input-group-addon"><i
-							class="glyphicon glyphicon-search"></i></span>  <input name="consulta"
-							id="txt_consulta" placeholder="Consultar" type="text"
-							class="form-control"> 
+					
+					<div class="pull-right">
+					<h3>Filtrar:</h3>
+					<a class="btn btn-warning" href='usuario'> Todos</a>
+					<a class="btn btn-warning" href='usuario?buscar=1'> Ativos</a>
+					<a class="btn btn-warning" href='usuario?buscar=2'> Inativos</a>
 					</div>
-
 
 				</div>
 				<!-- /#top -->
@@ -183,7 +184,6 @@
 
 		</div>
 
-		<script src="lib/bootstrap/jquery/jquery.min.js"></script>
-		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		
 </body>
 </html>
