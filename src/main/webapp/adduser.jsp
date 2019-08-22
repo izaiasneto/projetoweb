@@ -26,6 +26,17 @@
 </head>
 <body>
 
+	<%
+	String user = null;
+	if((String)session.getAttribute("userSession") != null){
+
+			user = (String)session.getAttribute("userSession");
+	}else{
+	
+		    response.sendRedirect("login");
+	}
+	%>
+	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -36,9 +47,19 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Gerenciamento de Usuários </a>
+				<a class="navbar-brand" href="#">
+				
+				<%;
+				out.print("Bem Vindo, " + session.getAttribute("userSession")); %> </a>
+			
+				
+				
 			</div>
+			
+			<a class="navbar-brand pull-right" href='logout'> Logout</a>
+			
 		</div>
+		
 	</nav>
 	<div>
 		<div class="col-md-2">
@@ -95,7 +116,7 @@
 			<div id="main" class="container-fluid">
 
 				<div id="top" class="row">
-
+		
 					<h2>Todos usuários</h2>
 					
 					<div class="pull-right">
