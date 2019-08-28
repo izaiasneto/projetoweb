@@ -56,7 +56,7 @@
 				
 			</div>
 			
-			<a class="navbar-brand pull-right" href='logout'> Logout</a>
+			<a class="navbar-brand pull-right" href='logout'> Sair</a>
 			
 		</div>
 		
